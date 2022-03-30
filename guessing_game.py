@@ -15,15 +15,15 @@ print("Hello brave soul! I see you are on a quest to guess the random number!")
 
 num = random.randint(1, 50)
 
-guess = int(input("I invite thee to take a guess.  "))
-guess_count = 1
 
 def start_game():
+	guess = int(input("I invite thee to guess a number between 1 and 50.  "))
+	guess_count = 1
 	while guess != num:
 		if guess > num:
-			print("'Tis lower!")
+			guess = int(input("'Tis lower! Guess again!"  ))
 		elif guess < num:
-			print("'Tis higher!")
+			guess = int(input("'Tis higher! Guess again!"  ))
 		elif guess == num:
 			print(f"Huzzah! Thou hast guessed the random number in just {guess_count} attempts!")
 			break
@@ -37,23 +37,23 @@ print("Your quest for the random number has ended in triumph! Go forth this day 
 
 
 
-    #"""Psuedo-code Hints
-    
-    #When the program starts, we want to:
+	#"""Psuedo-code Hints
+	
+	#When the program starts, we want to:
    # ------------------------------------
-    #1. Display an intro/welcome message to the player.
-    #2. Store a random number as the answer/solution.
-    #3. Continuously prompt the player for a guess.
-      #a. If the guess greater than the solution, display to the player "It's lower".
-      #b. If the guess is less than the solution, display to the player "It's higher".
-    
-    #4. Once the guess is correct, stop looping, inform the user they "Got it"
-        # and show how many attempts it took them to get the correct number.
-    #5. Let the player know the game is ending, or something that indicates the game is over.
-    
-    #( You can add more features/enhancements if you'd like to. )
+	#1. Display an intro/welcome message to the player.
+	#2. Store a random number as the answer/solution.
+	#3. Continuously prompt the player for a guess.
+	  #a. If the guess greater than the solution, display to the player "It's lower".
+	  #b. If the guess is less than the solution, display to the player "It's higher".
+	
+	#4. Once the guess is correct, stop looping, inform the user they "Got it"
+		# and show how many attempts it took them to get the correct number.
+	#5. Let the player know the game is ending, or something that indicates the game is over.
+	
+	#( You can add more features/enhancements if you'd like to. )
    # """
-    # write your code inside this function.
+	# write your code inside this function.
 
 
 
