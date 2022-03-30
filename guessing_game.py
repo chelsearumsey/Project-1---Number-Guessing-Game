@@ -11,19 +11,20 @@ NOTE: If you strongly prefer to work locally on your own computer, you can total
 
 import random
 
-print("Hello brave soul! I see you are on a quest to guess a random number!")
+print("Hello brave soul! I see you are on a quest to guess the random number!")
 
-random_num == random.randint(1,50)
+num = random.randint(1, 50)
+
 guess = int(input("I invite thee to take a guess.  "))
 guess_count = 1
 
 def start_game():
-	while guess != random_num:
-		if guess > random_num:
+	while guess != num:
+		if guess > num:
 			print("'Tis lower!")
-		elif guess < random_num:
+		elif guess < num:
 			print("'Tis higher!")
-		elif guess == random_num:
+		elif guess == num:
 			print(f"Huzzah! Thou hast guessed the random number in just {guess_count} attempts!")
 			break
 		guess_count += 1
@@ -39,7 +40,7 @@ print("Your quest for the random number has ended in triumph! Go forth this day 
     #"""Psuedo-code Hints
     
     #When the program starts, we want to:
-    ------------------------------------
+   # ------------------------------------
     #1. Display an intro/welcome message to the player.
     #2. Store a random number as the answer/solution.
     #3. Continuously prompt the player for a guess.
@@ -51,10 +52,9 @@ print("Your quest for the random number has ended in triumph! Go forth this day 
     #5. Let the player know the game is ending, or something that indicates the game is over.
     
     #( You can add more features/enhancements if you'd like to. )
-    """
+   # """
     # write your code inside this function.
 
 
 
 # Kick off the program by calling the start_game function.
-start_game()
