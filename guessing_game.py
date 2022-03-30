@@ -15,19 +15,30 @@ print("Hello brave soul! I see you are on a quest to guess the random number!")
 
 num = random.randint(1, 50)
 
-
 def start_game():
-	guess = int(input("I invite thee to guess a number between 1 and 50.  "))
 	guess_count = 1
-	while guess != num:
-		if guess > num:
-			guess = int(input("'Tis lower! Guess again!"  ))
-		elif guess < num:
-			guess = int(input("'Tis higher! Guess again!"  ))
-		elif guess == num:
-			print(f"Huzzah! Thou hast guessed the random number in just {guess_count} attempts!")
-			break
-		guess_count += 1
+	guess = int(input("I invite thee to guess a number between 1 and 50.  "))
+	while True:
+		try:
+			if guess < 1 or guess > 50:
+				raise IndexError()
+			
+		except IndexError as err:
+			guess = int(input("Oops! Make sure to enter a number between 1 and 50! Please do try again.  "))
+
+		except ValueError:
+			guess = int(input("Oops! Make sure to enter numbers only! Please do try again.  "))
+
+		else:	
+			if guess > num:
+				guess = int(input("'Tis lower! Guess again!"  ))
+			elif guess < num:
+				guess = int(input("'Tis higher! Guess again!"  ))
+			elif guess == num:
+				print(f"Huzzah! Thou hast guessed the random number in just {guess_count} attempts!")
+				break
+			guess_count += 1
+
 
 start_game()
 
