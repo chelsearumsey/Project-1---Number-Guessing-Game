@@ -28,7 +28,7 @@ def start_game():
 			guess = input(f"{err}")
 
 		except ValueError:
-			guess = input("Oops! Make sure to enter numbers only! Please do try again.  ")
+			guess = input("Oops! Make sure to enter whole numbers only! Please do try again.  ")
 
 		else:	
 			if guess > num:
