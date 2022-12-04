@@ -13,9 +13,8 @@ import random
 
 print("Hello brave soul! I see you are on a quest to guess the random number!")
 
-num = random.randint(1, 50)
-
 def start_game():
+	num = random.randint(1, 50) 
 	guess_count = 1
 	guess = input("I invite thee to guess a number between 1 and 50.  ")
 	
@@ -39,14 +38,24 @@ def start_game():
 			elif guess == num:
 				print(f"Huzzah! Thou hast guessed the random number in just {guess_count} attempts!")
 				break
-			guess_count += 1
-
-	guess_again = input("Wouldst thou like to guess another number? (Enter 'yes' or 'no')  ")	
+			guess_count += 1 	
+	
+	while True:
+		try:
+			guess_again = input("Wouldst thou like to guess another number? (Enter 'yes' or 'no')  ").lower()
 		
-	if guess_again == "yes":
-    		start_game() 
-	else:
-		print("Your quest for the random number has ended in triumph! Go forth this day with your head held high!") 
+		except ValueError:
+			print("Please answer 'yes' or 'no'.  ") 
+
+		else:
+			if guess_again == "yes": 
+				start_game() 
+				break
+			elif guess_again =="no": 
+				print("Your quest for the random number has ended in triumph! Go forth this day with your head held high!") 
+				break
+				
+	
 
 
 start_game()
