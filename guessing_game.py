@@ -17,12 +17,13 @@ num = random.randint(1, 50)
 
 def start_game():
 	guess_count = 1
-	guess = (input("I invite thee to guess a number between 1 and 50.  "))
+	guess = input("I invite thee to guess a number between 1 and 50.  ")
+	
 	while True:
 		try:
 			guess = int(guess)
 			if guess < 1 or guess > 50:
-				raise IndexError(("Oops! Make sure to enter a number between 1 and 50! Please do try again.  "))
+				raise IndexError("Oops! Make sure to enter a number between 1 and 50! Please do try again.  ")
 			
 		except IndexError as err:
 			guess = input(f"{err}")
@@ -40,10 +41,18 @@ def start_game():
 				break
 			guess_count += 1
 
+	guess_again = input("Wouldst thou like to guess another number? (Enter 'yes' or 'no')  ")	
+		
+	if guess_again == "yes":
+    		start_game() 
+	else:
+		print("Your quest for the random number has ended in triumph! Go forth this day with your head held high!") 
+
 
 start_game()
 
-print("Your quest for the random number has ended in triumph! Go forth this day with your head held high!")
+
+
 
 
 
