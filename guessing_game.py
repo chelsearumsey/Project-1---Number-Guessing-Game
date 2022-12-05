@@ -39,7 +39,7 @@ def start_game():
 			if guess_again == "yes": 
 				if guess_count <= high_score:
 					high_score = guess_count
-					print(f"Thy current best score is {high_score}!")
+				print(f"Thy current best score is {high_score}!")
 				start_game() 
 				break
 			elif guess_again =="no": 
