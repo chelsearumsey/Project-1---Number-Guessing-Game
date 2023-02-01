@@ -1,4 +1,3 @@
-
 import random
 
 print("Hello brave soul! I see you are on a quest to guess the random number!")
